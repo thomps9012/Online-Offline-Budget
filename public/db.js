@@ -19,11 +19,11 @@ request.onerror = function(event) {
   console.log("Woops! " + event.target.errorCode);
 };
 
-function saveRecord(transaction) {
+function saveRecord(record) {
   const transaction = db.transaction(["pending"], "readwrite");
   const store = transaction.objectStore("pending");
 
-  store.add(transaction);
+  store.add(record);
 }
 
 function checkDatabase() {
